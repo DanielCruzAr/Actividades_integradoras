@@ -15,8 +15,8 @@ class Logs{
 		vector<string> data;
 		
 		//funciones
-		//void swap(int,int);
-		//void new_vec(vector<int>&);
+		void swap(int,int);
+		void new_vec(vector<int>&);
 	public:
 		Logs(string);
 		
@@ -61,7 +61,7 @@ void Logs::imprime(){
 
 
 //Ordenamiento
-/*
+
 void Logs::swap(int i, int j){
 	string aux = data[i];
 	data[i] = data[j];
@@ -78,8 +78,8 @@ void Logs::new_vec(vector<int> &v){
 			line = line + data[i][j];
 		}
 		cout << line << endl;
-		//num = stoi(line);
-		//v.push_back(num);
+		num = stoi(line);
+		v.push_back(num);
 	}
 }
 
@@ -95,7 +95,7 @@ void Logs::ordena(){
 		}
 	}
 }
-*/
+
 //Busqueda
 
 void Logs::busca(string n){}
