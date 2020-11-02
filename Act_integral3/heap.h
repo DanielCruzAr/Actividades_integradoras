@@ -9,11 +9,13 @@
 
 using namespace std;
 
+const int LIM = 50;
+
 template <class T>
 class Heap {
 private:
 	T *h_data;
-	string data[50];
+	string data[LIM];
 	unsigned int size;
 	unsigned int count;
 	unsigned int parent(unsigned int) const;
@@ -130,6 +132,11 @@ por lo que es de complejidad O(log(n)).
 */
 template <class T>
 void Heap<T>::pop(){
+	if(empty()){
+		cout << "No hay datos en el heap \n"; 
+		return; 
+	}
+	
 	T aux = h_data[0];
 	h_data[0] = h_data[--count];
 	heapify(0);
