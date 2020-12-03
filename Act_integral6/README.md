@@ -1,10 +1,10 @@
 ## Competencia SEG0702A Tecnologías de Vanguardia
-La estructura de disjoint sets consiste en crear diferentes sets de datos dado un arreglo de datos
+La estructura de disjoint sets consiste en crear diferentes sets de datos dado un arreglo de datos.
 Esta estructura que realiza un seguimiento de un conjunto de elementos divididos en un número de subsets.
-Esta estructura de datos está commpuesta de dos algoritmos fundamentales: union y find.
+Está commpuesta de dos algoritmos fundamentales: union y find.
 Union junta dos subsets en uno solo y find en qué subset se encuentra un elemento en particular.
 Algunos de los usos que se les da comunmente a los disjoint sets son detectar ciclos en otras estructuras como grafos, separar datos repetidos, etc.
-Ejemplo: para detectar un ciclo dentro de un grafo si dirigir considerando en siguiente grafo:
+Ejemplo: para detectar un ciclo dentro de un grafo considerando la imagen:
 
 ![Graph](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Cycle-in-graph.png)
 
