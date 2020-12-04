@@ -5,7 +5,6 @@
 #include <sstream>
 #include <iostream>
 #include <vector>
-#include "logs.h"
 
 using namespace std;
 
@@ -33,8 +32,6 @@ public:
 	void pop();
 	void clear();
 	string toString() const;
-	
-	friend class Logs;
 };
 
 template <class T>

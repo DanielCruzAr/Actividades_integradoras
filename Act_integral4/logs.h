@@ -7,11 +7,8 @@
 #include <string>
 #include <sstream>
 #include "heap.h"
-#include "hash.h"
 
 using namespace std;
-
-const int MAX = 30; //limite de datos que tendra el arbol 
 
 template <class T> class Heap;
 
@@ -28,25 +25,20 @@ class Logs{
 		Heap<int> p;
 		Heap<int> m;
 		
-		Hash<string, int> prod;
-		
 		//Vectores de datos recuperados del archivo
 		vector<string> data;
 		vector<int> fecha;
 		vector<int> hora;
 		vector<int> peso;
 		vector<int> monto;
-		vector<string> producto;
-		int size;
+		unsigned int size;
 		
 	public:
-		Logs();
+		Logs(vector<string>, unsigned int);
 		bool empty() const;
 		void heaps();
 		vector<int> create(int);
-		vector<string> str_create(int);
 		void datos();
-		void lee(string);
 		void print();
 		void h_fecha();
 		void h_hora();
@@ -59,34 +51,14 @@ class Logs{
 };
 
 /* Constructor */
-Logs::Logs() : size(0), f(MAX), h(MAX), p(MAX), m(MAX) {} 
+Logs::Logs(vector<string> dta, unsigned int sze) : f(sze), h(sze), p(sze), m(sze) {
+	data = dta;
+	size = sze;
+	datos();
+} 
 
 bool Logs::empty() const {
 	return (size == 0);
-}
-
-/* 
-Lectura de archivo
-Leer el archivo de texto
-Esta función  utiliza un ciclo while dentro de un condicional if que se repite el mismo número de elementos que 
-contenga la lista en el peor de los casos, por lo cual es O(n).
- */
-void Logs::lee(string file){
-	string line;
-	
-	ifstream lee(file);
-	if (lee.is_open()){
-		while (getline(lee, line, '\n')){
-			data.push_back(line);
-			size++;
-		}
-		
-		lee.close();
-		datos();
-	}
-	else{
-		cout << "Unable to open file";
-    }
 }
 
 /* 
@@ -127,31 +99,11 @@ vector<int> Logs::create(int n){
 	return v;
 }
 
-/*
-Crea un nuevo vector con los nombres de los productos como strings
-Contiene un ciclo for anidado que se repite el doble de veces que los elementos del vector
-en el peor de los casos. Complejidad O(n^2)
-*/
-vector<string> Logs::str_create(int n){
-	vector<string> str;
-	string line;
-	int j;
-	
-	for (int i = 0; i<data.size(); i++){
-		line = "";
-		for (int j = 0; j<data[i].length()-n-1; j++)
-			line += data[i][n+j];
-		str.push_back(line);
-	}
-	return str;
-}
-
 void Logs::datos() {
 	fecha = create(0);
 	hora = create(6);	
 	peso = create(17);
 	monto = create(12);
-	producto = str_create(20);
 }
 
 /* 
@@ -174,9 +126,6 @@ void Logs::print(){
 	cout << "=============================================== \nPeso \n";
 	for (int i : peso)
 		cout << i << endl;
-	cout << "=============================================== \nProducto \n";
-	for (string str : producto)
-		cout << str << endl;
 }
 
 /*
@@ -263,7 +212,7 @@ O(1)
 void Logs::escribe(string type) {
 	ofstream escribe("orden.txt");
 	if(escribe.is_open()){
-		escribe << "Fecha (mm/dd) | Hora (hh:mm) | Monto $ | Peso (kg) | Producto \n";
+		escribe << "Fecha (mm/dd) | Hora (hh:mm) | Monto $ | Peso (kg) | ID | Producto \n";
 		if(type == "fecha")
 			escribe << f.toString();
 		else if(type == "hora")
@@ -280,7 +229,6 @@ void Logs::escribe(string type) {
 		cout << "Unable to open file";
 	}
 }
-
 
 //Eliminar
 void Logs::clear(){
