@@ -126,7 +126,7 @@ Value Hash<Key, Value>::get(const Key k) {
 	if (pos != -1) {
 		return values[pos];
 	}
-	return 0;
+	return "No such value";
 }
 
 /*
