@@ -14,8 +14,8 @@ Los datos se ordenaron en una lista ligada.
 ### Actividad Integral 3
 Se incluyó un árbol heap para ordenar los datos del archivo de ventas.
 ### Actividad Integral 4
-Considerando que solo necesito 4 de 6 subcompetencias para acreditar la competencia SICT0302B decidí no implementar grafos ya que mi proyecto no los requería.
-**Corrección:¨** Al compilar el código marcaba el error: 
+Considerando que solo necesito 4 de 6 subcompetencias para acreditar la competencia SICT0302B decidí no implementar grafos ya que mi proyecto no los requería.'\n'
+**Corrección:** Al compilar el código marcaba el error: 
 In file included from hash.h:6:
 logs.h:31:3: error: 'Hash' does not name a type
    31 |   Hash<string, int> prod;
