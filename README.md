@@ -33,6 +33,7 @@ hash.h:17:7: error: expected ';' at end of member declaration
 hash.h:17:12: error: expected unqualified-id before ';' token
    17 |   Key keys*;
       |            ^*
+
 Decidí entonces subir los archivos de la entrega final ya que ahí ya compila el problema en su totalidad.
 ### Actividad Integral 5
 **Comp:** SICT0302B 6
