@@ -19,22 +19,6 @@ Los datos se ordenaron en una lista ligada.
 Se incluyó un árbol heap para ordenar los datos del archivo de ventas.
 ### Actividad Integral 4
 Considerando que solo necesito 4 de 6 subcompetencias para acreditar la competencia SICT0302B decidí no implementar grafos ya que mi proyecto no los requería.
-
-**Corrección:** Al compilar el código marcaba el error: 
-
-*In file included from hash.h:6:
-logs.h:31:3: error: 'Hash' does not name a type
-   31 |   Hash<string, int> prod;
-      |   ^~~~
-hash.h:17:7: error: expected ';' at end of member declaration
-   17 |   Key keys;
-      |       ^~~~
-      |           ;
-hash.h:17:12: error: expected unqualified-id before ';' token
-   17 |   Key keys*;
-      |            ^*
-
-Decidí entonces subir los archivos de la entrega final ya que ahí ya compila el problema en su totalidad.
 ### Actividad Integral 5
 **Comp:** SICT0302B 6
 Se implementaron hashes.
