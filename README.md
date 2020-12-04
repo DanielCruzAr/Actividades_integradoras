@@ -45,4 +45,20 @@ Proyecto completo.
 SEG0702A Tecnologías de vanguardia. 
 
 **Comp:** Los casos prueba se introdujeron en un archivo .cpp para la competencia SICT0301B de casos prueba.
+## Correcciones
+### Actividad integral 4
+**Corrección:** Al compilar el código marcaba el error: 
 
+*In file included from hash.h:6:
+logs.h:31:3: error: 'Hash' does not name a type
+   31 |   Hash<string, int> prod;
+      |   ^~~~
+hash.h:17:7: error: expected ';' at end of member declaration
+   17 |   Key keys;
+      |       ^~~~
+      |           ;
+hash.h:17:12: error: expected unqualified-id before ';' token
+   17 |   Key keys*;
+      |            ^*
+
+Decidí entonces subir los archivos de la entrega final ya que ahí ya compila el problema en su totalidad.
